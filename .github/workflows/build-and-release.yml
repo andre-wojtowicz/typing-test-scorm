@@ -26,6 +26,8 @@ jobs:
   pages:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: checkout repository gh-pages
       uses: actions/checkout@v4
@@ -37,8 +39,6 @@ jobs:
         name: scorm_zip
         path: ./dist/
     - name: script
-      permissions:
-        contents: write
       run: |
         rm -rf materials imsmanifest.xml
         unzip dist/*.zip -d .
