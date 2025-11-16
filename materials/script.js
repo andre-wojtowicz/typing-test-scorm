@@ -68,6 +68,9 @@ function initTyping() {
 
         timeTag.innerText = 0;
         ScormSaveScore(mistakesArr, wpmArr, cpmArr);
+
+
+        inpField.removeEventListener("input", initTyping);
     }   
 }
 
@@ -96,6 +99,7 @@ function resetGame() {
     mistakesArr = [];
     wpmArr = [];
     cpmArr = [];
+    inpField.addEventListener("input", initTyping);
 }
 
 function onMyTimeout(el, callback) {
