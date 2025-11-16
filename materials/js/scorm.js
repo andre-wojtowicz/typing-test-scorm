@@ -294,7 +294,7 @@ function ScormSaveScore(mistakesArr, wpmArr, cpmArr)
     }
 
     var lastscore = parseFloat( ScormProcessGetValue("cmi.core.score.raw") );
-    if (lastscore > score) {
+    if (lastscore == 1.0) {
        ttresult_text = "Not updating";
        document.querySelector("[id=ttresult]").innerText = ttresult_text;
        return;
