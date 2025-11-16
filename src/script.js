@@ -6,6 +6,10 @@ mistakeTag = document.querySelector(".mistake span"),
 wpmTag = document.querySelector(".wpm span"),
 cpmTag = document.querySelector(".cpm span");
 
+mistakesArr = [];
+wpmArr = [];
+cpmArr = [];
+
 let timer,
 maxTime = 60,
 timeLeft = maxTime,
@@ -84,6 +88,9 @@ function resetGame() {
     wpmTag.innerText = 0;
     mistakeTag.innerText = 0;
     cpmTag.innerText = 0;
+    mistakesArr = [];
+    wpmArr = [];
+    cpmArr = [];
 }
 
 function onMyTimeout(el, callback) {
@@ -103,7 +110,29 @@ function onMyTimeout(el, callback) {
 }
 
 onMyTimeout(timeTag, () => {
-  ScormSaveScore();
+  ScormSaveScore(mistakesArr, wpmArr, cpmArr);
+});
+
+function onMyTicks(el, callback) {
+  const observer = new MutationObserver(() => {
+    if (el.innerText.trim() === "50" || el.innerText.trim() === "30" || el.innerText.trim() === "10") {
+      callback();
+    }
+  });
+
+  observer.observe(el, {
+    characterData: true,
+    subtree: true,
+    childList: true
+  });
+
+  return observer;
+}
+
+onMyTicks(timeTag, () => {
+  mistakesArr.push( parseInt(mistakeTag.innerText) );
+  wpmArr.push( parseInt(wpmTag.innerText) );
+  cpmArr.push( parseInt(cpmTag.innerText) );
 });
 
 loadParagraph();

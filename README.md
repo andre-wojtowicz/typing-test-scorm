@@ -2,6 +2,12 @@
 
 This repository contains scripts to wrap <https://github.com/yaswanthteja/Typing-speed-test> into SCORM 1.2 package. I use it to grade students' activity in Moodle.
 
+Settings to be graded max points:
+
+* mistakes <= 3,
+* WPM >= 50,
+* CPM >= 100.
+
 The latest automatically built SCORM package can be downloaded from [Releases](https://github.com/andre-wojtowicz/typing-test-scorm).
 
 [Live demo](https://andre-wojtowicz.github.io/typing-test-scorm/) with simple SCO run-time test environment (click "Launch SCO" in top-left corner).

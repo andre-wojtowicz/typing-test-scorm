@@ -278,7 +278,7 @@ function ScormMarkAsBrowsed()
     ScormProcessSetValue("cmi.core.lesson_status", "browsed");
 }
 
-function ScormSaveScore()
+function ScormSaveScore(mistakesArr, wpmArr, cpmArr)
 {
     var timecounter = parseInt( document.querySelector("[id=timecounter]").innerText );
     var mistakes = parseInt( document.querySelector("[id=mistakes]").innerText );
@@ -297,6 +297,9 @@ function ScormSaveScore()
     ScormProcessSetValue("cmi.core.score.raw", score);
     ScormProcessSetValue("cmi.core.score.min", 0);
     ScormProcessSetValue("cmi.core.score.max", 1);
+
+    ScormProcessSetValue("cmi.suspend_data", mistakesArr.toString() + " | " + wpmArr.toString() + " | " + cpmArr.toString());
+
     if (score == 1.0)
         ScormProcessSetValue("cmi.core.lesson_status", "completed");
     else
