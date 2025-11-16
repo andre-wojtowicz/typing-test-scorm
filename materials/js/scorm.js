@@ -280,13 +280,14 @@ function ScormMarkAsBrowsed()
 
 function ScormSaveScore()
 {
+    var timecounter = parseInt( document.querySelector("[id=timecounter]").innerText );
     var mistakes = parseInt( document.querySelector("[id=mistakes]").innerText );
     var wpm = parseInt( document.querySelector("[id=wpm]").innerText );
     var cpm = parseInt( document.querySelector("[id=cpm]").innerText );
 
     var score = 0.0;
 
-    if (mistakes <= 3 && wpm >= 50 && cpm >= 100)
+    if (timecounter == 0 && mistakes <= 3 && wpm >= 50 && cpm >= 100)
        score = 1.0;
 
     ScormProcessSetValue("cmi.core.score.raw", score);
