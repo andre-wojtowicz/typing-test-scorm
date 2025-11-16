@@ -292,7 +292,7 @@ function ScormSaveScore()
     ScormProcessSetValue("cmi.core.score.raw", score);
     ScormProcessSetValue("cmi.core.score.min", 0);
     ScormProcessSetValue("cmi.core.score.max", 1);
-    if (score/total == 1)
+    if (score == 1.0)
         ScormProcessSetValue("cmi.core.lesson_status", "completed");
     else
         ScormProcessSetValue("cmi.core.lesson_status", "incomplete");
