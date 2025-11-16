@@ -5,6 +5,7 @@ timeTag = document.querySelector(".time span b"),
 mistakeTag = document.querySelector(".mistake span"),
 wpmTag = document.querySelector(".wpm span"),
 cpmTag = document.querySelector(".cpm span");
+ttresultTag = document.querySelector(".ttresult span");
 
 mistakesArr = [];
 wpmArr = [];
@@ -88,6 +89,7 @@ function resetGame() {
     wpmTag.innerText = 0;
     mistakeTag.innerText = 0;
     cpmTag.innerText = 0;
+    ttresultTag.innerText = 0;
     mistakesArr = [];
     wpmArr = [];
     cpmArr = [];
