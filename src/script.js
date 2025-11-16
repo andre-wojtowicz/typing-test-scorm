@@ -71,6 +71,7 @@ function initTimer() {
         wpmTag.innerText = wpm;
     } else {
         clearInterval(timer);
+        ScormSaveScore();
     }
 }
 
