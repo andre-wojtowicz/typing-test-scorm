@@ -5,8 +5,8 @@ This repository contains scripts to wrap <https://github.com/yaswanthteja/Typing
 Settings to be graded max points (120 seconds):
 
 * mistakes <= 3,
-* WPM >= 90,
-* CPM >= 200.
+* WPM >= 40,
+* CPM >= 300.
 
 The latest automatically built SCORM package can be downloaded from [Releases](https://github.com/andre-wojtowicz/typing-test-scorm).
 

@@ -287,7 +287,7 @@ function ScormSaveScore(mistakesArr, wpmArr, cpmArr)
 
     var score = 0.0;
 
-    if (timecounter == 0 && mistakes <= 3 && wpm >= 90 && cpm >= 200)
+    if (timecounter == 0 && mistakes <= 3 && wpm >= 40 && cpm >= 300)
        score = 1.0;
 
     var lastscore = parseFloat( ScormProcessGetValue("cmi.core.score.raw") );
