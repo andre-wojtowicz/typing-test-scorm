@@ -35,7 +35,7 @@ body{
 }
 .content-box .typing-text{
   overflow: hidden;
-  max-height: 256px;
+  max-height: 512px;
 }
 .typing-text::-webkit-scrollbar{
   width: 0;

@@ -11,7 +11,7 @@ wpmArr = [];
 cpmArr = [];
 
 let timer,
-maxTime = 60,
+maxTime = 120,
 timeLeft = maxTime,
 charIndex = mistakes = isTyping = 0;
 
@@ -115,7 +115,7 @@ onMyTimeout(timeTag, () => {
 
 function onMyTicks(el, callback) {
   const observer = new MutationObserver(() => {
-    if (el.innerText.trim() === "50" || el.innerText.trim() === "30" || el.innerText.trim() === "10") {
+    if (el.innerText.trim() === "110" || el.innerText.trim() === "90" || el.innerText.trim() === "70" || el.innerText.trim() === "50" || el.innerText.trim() === "30" || el.innerText.trim() === "10") {
       callback();
     }
   });
