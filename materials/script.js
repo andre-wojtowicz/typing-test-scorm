@@ -70,7 +70,6 @@ function initTimer() {
         let wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60);
         wpmTag.innerText = wpm;
     } else {
-        ScormSaveScore();
         clearInterval(timer);
     }
 }
@@ -86,6 +85,26 @@ function resetGame() {
     mistakeTag.innerText = 0;
     cpmTag.innerText = 0;
 }
+
+function onMyTimeout(el, callback) {
+  const observer = new MutationObserver(() => {
+    if (el.innerText.trim() === "0") {
+      callback();
+    }
+  });
+
+  observer.observe(el, {
+    characterData: true,
+    subtree: true,
+    childList: true
+  });
+
+  return observer;
+}
+
+onMyTimeout(timeTag, () => {
+  ScormSaveScore();
+});
 
 loadParagraph();
 inpField.addEventListener("input", initTyping);
