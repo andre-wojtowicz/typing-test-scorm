@@ -37,6 +37,8 @@ jobs:
         name: scorm_zip
         path: ./dist/
     - name: script
+      permissions:
+        contents: write
       run: |
         rm -rf materials imsmanifest.xml
         unzip dist/*.zip -d .
