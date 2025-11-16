@@ -89,7 +89,7 @@ function resetGame() {
     wpmTag.innerText = 0;
     mistakeTag.innerText = 0;
     cpmTag.innerText = 0;
-    ttresultTag.innerText = 0;
+    ttresultTag.innerText = "";
     mistakesArr = [];
     wpmArr = [];
     cpmArr = [];
