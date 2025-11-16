@@ -65,6 +65,9 @@ function initTyping() {
     } else {
         clearInterval(timer);
         inpField.value = "";
+
+        timeTag.innerText = 0;
+        ScormSaveScore(mistakesArr, wpmArr, cpmArr);
     }   
 }
 
