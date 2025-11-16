@@ -286,19 +286,27 @@ function ScormSaveScore(mistakesArr, wpmArr, cpmArr)
     var cpm = parseInt( document.querySelector("[id=cpm]").innerText );
 
     var score = 0.0;
+    var ttresult_text = "Failed";
 
-    if (timecounter == 0 && mistakes <= 3 && wpm >= 40 && cpm >= 300)
+    if (timecounter == 0 && mistakes <= 3 && wpm >= 40 && cpm >= 300) {
        score = 1.0;
+       ttresult_text = "Passed";
+    }
 
     var lastscore = parseFloat( ScormProcessGetValue("cmi.core.score.raw") );
-    if (lastscore > score)
+    if (lastscore > score) {
+       ttresult_text = "Not updating";
+       document.querySelector("[id=ttresult]").innerText = ttresult_text;
        return;
+    }
 
     ScormProcessSetValue("cmi.core.score.raw", score);
     ScormProcessSetValue("cmi.core.score.min", 0);
     ScormProcessSetValue("cmi.core.score.max", 1);
 
     ScormProcessSetValue("cmi.suspend_data", mistakesArr.toString() + " | " + wpmArr.toString() + " | " + cpmArr.toString());
+
+    document.querySelector("[id=ttresult]").innerText = ttresult_text;
 
     if (score == 1.0)
         ScormProcessSetValue("cmi.core.lesson_status", "completed");
