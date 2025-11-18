@@ -286,16 +286,16 @@ function ScormSaveScore(mistakesArr, wpmArr, cpmArr)
     var cpm = parseInt( document.querySelector("[id=cpm]").innerText );
 
     var score = 0.0;
-    var ttresult_text = "Failed";
+    var ttresult_text = "🔴 Failed";
 
     if (timecounter == 0 && mistakes <= 3 && wpm >= 40 && cpm >= 300) {
        score = 1.0;
-       ttresult_text = "Passed";
+       ttresult_text = "🟢 Passed";
     }
 
     var lastscore = parseFloat( ScormProcessGetValue("cmi.core.score.raw") );
     if (lastscore == 1.0) {
-       ttresult_text = "Not updating";
+       ttresult_text = "🟡 Already passed";
        document.querySelector("[id=ttresult]").innerText = ttresult_text;
        return;
     }
