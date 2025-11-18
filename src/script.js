@@ -63,14 +63,12 @@ function initTyping() {
         mistakeTag.innerText = mistakes;
         cpmTag.innerText = charIndex - mistakes;
     } else {
+        inpField.removeEventListener("input", initTyping);
         clearInterval(timer);
         inpField.value = "";
 
         timeTag.innerText = 0;
         ScormSaveScore(mistakesArr, wpmArr, cpmArr);
-
-
-        inpField.removeEventListener("input", initTyping);
     }   
 }
 
@@ -147,3 +145,4 @@ onMyTicks(timeTag, () => {
 loadParagraph();
 inpField.addEventListener("input", initTyping);
 tryAgainBtn.addEventListener("click", resetGame);
+
