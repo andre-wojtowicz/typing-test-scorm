@@ -35,8 +35,8 @@ Grade:
 
 Attempts management:
 
-    Number of attempts:                     1
-    Force new attempt:                      No
+    Number of attempts:                     Unlimited
+    Force new attempt:                      Yes
     Lock after final attempt:               No
 
 Compatibility settings:
