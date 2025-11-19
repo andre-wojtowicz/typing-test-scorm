@@ -144,5 +144,6 @@ onMyTicks(timeTag, () => {
 
 loadParagraph();
 inpField.addEventListener("input", initTyping);
-tryAgainBtn.addEventListener("click", resetGame);
+/*tryAgainBtn.addEventListener("click", resetGame);*/
+
 
