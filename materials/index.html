@@ -35,7 +35,7 @@
               <span id="ttresult"></span>
             </li>
           </ul>
-          <button>↺ Try Again</button>
+          <button onclick="this.onclick = null; this.innerText = '↺ Try Again'; this.addEventListener('click', resetGame); ">Click to start</button>
         </div>
       </div>
     </div>
@@ -45,4 +45,5 @@
   
   </body>
 </html>
+
 
